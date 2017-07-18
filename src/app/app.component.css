@@ -1,0 +1,13 @@
+.header {
+    background: lightgoldenrodyellow;
+    color: black;
+}
+.title {
+    font-family: 'Faster One', cursive;
+    font-size: 1.5em;
+}
+
+.logo {
+  height: 50px; 
+  margin-top: 10px;
+}
