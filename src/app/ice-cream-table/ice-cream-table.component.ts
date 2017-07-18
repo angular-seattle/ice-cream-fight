@@ -23,6 +23,10 @@ export class IceCreamTableComponent implements OnInit {
       this.dataSource = new FlavorDataSource(this.service);
     }, 0);
   }
+
+  addVote(id: string) {
+    this.service.addVote(id);
+  }
 }
 
 // A DataSource is how we get data into a CDK table.

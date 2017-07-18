@@ -23,7 +23,7 @@
     <ng-container cdkColumnDef="like">
       <md-header-cell *cdkHeaderCellDef> </md-header-cell>
       <md-cell class="buttons-container" *cdkCellDef="let row">
-        <button class="vote-button" md-mini-fab>
+        <button class="vote-button" (click)="addVote(row.$key)" md-mini-fab>
           <md-icon>thumb_up</md-icon></button>
       </md-cell>
     </ng-container>

@@ -13,6 +13,11 @@ export class FlavorService {
     const flavorList = this.db.list('/flavors', { query: { orderByChild: 'votes' } });
     return flavorList.map((array) => array.slice().reverse());
   }
+
+  addVote(id: string) {
+    const ref = this.db.database.ref(`/flavors/${id}/votes`);
+    ref.transaction((currentVotes) => currentVotes + 1);
+  }
 }
 
 export interface FlavorData {
