@@ -1,0 +1,11 @@
+{
+  "flavors" : {
+    "-KoqmlbTgQTXPz1mCnD4": {"votes": 20, "imageUrl": "/assets/americone_dream.jpg", "name": "Americone Dream"},
+    "-KoqdcZ3mx23ZlptyOeb": {"votes": 8, "imageUrl": "/assets/rocky_road.jpg", "name": "Rocky Road"},
+    "-KozmlbYgQTXPz1mCnD4" : {
+      "imageUrl" : "https://www.freal.com/media/catalog/product/cache/1/ingredient_image/400x/040ec09b1e35df139433887a97daa66f/m/i/mint-chip-ice-cream.jpg",
+      "name" : "Mint Chocolate Chip",
+      "votes" : 6
+    }
+  }
+}

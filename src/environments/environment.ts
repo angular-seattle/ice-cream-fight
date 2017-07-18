@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyCilwcfWJDcwbSM76G8Y-CGnI7dedssmTQ',
+    authDomain: 'ice-cream-fight.firebaseapp.com',
+    databaseURL: 'https://ice-cream-fight.firebaseio.com',
+    projectId: 'ice-cream-fight',
+    storageBucket: '',
+    messagingSenderId: '100721618624'
+  }
 };
