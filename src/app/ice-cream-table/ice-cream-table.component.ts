@@ -8,6 +8,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/throttleTime';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/groupBy';
 
 const VOTE_DELAY = 750;
 
@@ -30,6 +32,7 @@ export class IceCreamTableComponent implements OnInit {
   public vote$ = new Subject<any>();
   displayedColumns = ['votes', 'image', 'name', 'like'];
   pulseState = '';
+  disabled: { [key: number]: boolean } = {};
 
   constructor(private service: FlavorService, private ngZone: NgZone) { }
 
@@ -49,8 +52,16 @@ export class IceCreamTableComponent implements OnInit {
       }, 3000);
     });
 
-    this.vote$.asObservable().throttleTime(VOTE_DELAY).subscribe((id: string) => {
-      this.service.addVote(id);
+    this.vote$.asObservable().groupBy(s => s).subscribe((value: any) => {
+      const id = value.key;
+      value.throttleTime(VOTE_DELAY - 250).subscribe(() => {
+        this.service.addVote(id);
+        this.disabled[id] = true;
+      });
+    });
+
+    this.vote$.delay(VOTE_DELAY).forEach((id) => {
+      this.disabled[id] = false;
     });
   }
 
