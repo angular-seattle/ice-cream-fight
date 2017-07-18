@@ -3,9 +3,13 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { DataSource } from '@angular/cdk';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/throttleTime';
+
+const VOTE_DELAY = 750;
 
 @Component({
   selector: 'app-ice-cream-table',
@@ -23,6 +27,7 @@ import 'rxjs/add/observable/of';
 })
 export class IceCreamTableComponent implements OnInit {
   dataSource: FlavorDataSource | null;
+  public vote$ = new Subject<any>();
   displayedColumns = ['votes', 'image', 'name', 'like'];
   pulseState = '';
 
@@ -43,10 +48,14 @@ export class IceCreamTableComponent implements OnInit {
         this.ngZone.run(() => this.pulseState = 'enabled');
       }, 3000);
     });
+
+    this.vote$.asObservable().throttleTime(VOTE_DELAY).subscribe((id: string) => {
+      this.service.addVote(id);
+    });
   }
 
   addVote(id: string) {
-    this.service.addVote(id);
+    this.vote$.next(id);
   }
 }
 
