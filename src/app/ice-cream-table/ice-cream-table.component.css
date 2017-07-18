@@ -1,0 +1,32 @@
+.flavor-table {
+    margin: 6px;
+}
+
+img.flavor {
+    height: 42px
+}
+
+.vote-button {
+    background-color: green
+}
+
+.votes {
+    font-size: 1.7em;
+    font-weight: 6; 
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.vote-button md-icon {
+    color: white
+}
+
+.add-button {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+}

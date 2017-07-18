@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { MdCoreModule, MdTableModule, MdToolbarModule } from '@angular/material';
+import { MdCoreModule, MdTableModule, MdToolbarModule, MdIconModule, MdButtonModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk';
 import { NgModule } from '@angular/core';
 
@@ -9,8 +9,10 @@ import { IceCreamTableComponent } from './ice-cream-table/ice-cream-table.compon
 @NgModule({
   exports: [
     CdkTableModule,
+    MdButtonModule,
     MdCoreModule,
     MdTableModule,
+    MdIconModule,
     MdToolbarModule
   ]
 })

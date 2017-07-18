@@ -1,3 +1,34 @@
-<p>
-  ice-cream-table works!
-</p>
+<!-- Most of this is taken from: https://material.angular.io/components/table/overview -->
+<div class="flavor-table mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+    <!-- Votes Column -->
+    <ng-container cdkColumnDef="votes">
+      <md-header-cell *cdkHeaderCellDef> Votes </md-header-cell>
+      <md-cell class="votes" *cdkCellDef="let row"> {{row.votes}} </md-cell>
+    </ng-container>
+
+    <!-- Image Column -->
+    <ng-container cdkColumnDef="image">
+      <md-header-cell *cdkHeaderCellDef> Image </md-header-cell>
+      <md-cell *cdkCellDef="let row"> <img class="flavor" src="{{row.imageUrl}}"> </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="name">
+      <md-header-cell *cdkHeaderCellDef> Name </md-header-cell>
+      <md-cell *cdkCellDef="let row"> {{row.name}} </md-cell>
+    </ng-container>
+
+    <!-- Voting Column -->
+    <ng-container cdkColumnDef="like">
+      <md-header-cell *cdkHeaderCellDef> </md-header-cell>
+      <md-cell class="buttons-container" *cdkCellDef="let row">
+        <button class="vote-button" md-mini-fab>
+          <md-icon>thumb_up</md-icon></button>
+      </md-cell>
+    </ng-container>
+
+    <md-header-row *cdkHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *cdkRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
