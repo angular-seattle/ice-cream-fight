@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { IceCreamTableComponent } from './ice-cream-table/ice-cream-table.component';
+import { FlavorService } from './flavor.service';
 
 @NgModule({
   exports: [
@@ -32,7 +33,7 @@ export class IceCreamMaterialModule { }
     AngularFireDatabaseModule,
     IceCreamMaterialModule
   ],
-  providers: [],
+  providers: [FlavorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
