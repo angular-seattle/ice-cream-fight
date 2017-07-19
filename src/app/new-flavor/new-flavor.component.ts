@@ -20,6 +20,7 @@ export class NewFlavorComponent implements OnInit {
 
   addFlavor() {
     console.log('Adding flavor ', this.form.value);
+    this.service.addFlavor(this.form.value['flavorName'], this.form.value['imageUrl']);
     this.router.navigate(['/']);
   }
 }

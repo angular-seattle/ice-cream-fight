@@ -2,7 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { MdCoreModule, MdTableModule, MdToolbarModule, MdInputModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { MdCoreModule, MdTableModule, MdToolbarModule, MdSnackBarModule, MdInputModule, MdIconModule, MdButtonModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -36,6 +36,7 @@ export const appRoutes: Routes = [
     MdButtonModule,
     MdCoreModule,
     MdTableModule,
+    MdSnackBarModule,
     MdIconModule,
     MdInputModule,
     MdToolbarModule
