@@ -1,0 +1,22 @@
+{
+  "rules": {
+    "flavors": {
+      ".read": true,
+      "$flavor_id": {
+        ".write": "true",
+        "votes": {
+          ".validate": "newData.isNumber()"
+        },
+        "imageUrl": {
+          ".validate": "newData.isString() && newData.val().length < 1000"
+        },
+        "name": {
+          ".validate": "newData.isString() && newData.val().length < 50 "
+        },
+        "$other": {
+          ".validate": false
+        }
+      }
+    }
+  }
+}
