@@ -1,7 +1,8 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from './../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
-import { MdCoreModule, MdTableModule, MdToolbarModule, MdIconModule, MdButtonModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { MdCoreModule, MdTableModule, MdToolbarModule, MdInputModule, MdIconModule, MdButtonModule } from '@angular/material';
 import { CdkTableModule } from '@angular/cdk';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -36,6 +37,7 @@ export const appRoutes: Routes = [
     MdCoreModule,
     MdTableModule,
     MdIconModule,
+    MdInputModule,
     MdToolbarModule
   ]
 })
@@ -48,6 +50,7 @@ export class IceCreamMaterialModule { }
     NewFlavorComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),

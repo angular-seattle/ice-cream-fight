@@ -1,0 +1,17 @@
+.new-flavor {
+  padding: 6px;
+  margin: 6px;
+}
+
+form .full-width {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+img.preview {
+    height:200px;
+}

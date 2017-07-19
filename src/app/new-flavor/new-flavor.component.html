@@ -1,3 +1,24 @@
-<p>
-  new-flavor works!
-</p>
+<div class="new-flavor mat-elevation-z8">
+  <md-card>
+    <md-card-title>Submit a new flavor</md-card-title>
+    <md-card-content>
+      <form class="flavor-form" #flavorForm="ngForm">
+        <md-input-container class="full-width">
+          <input mdInput ngModel placeholder="Flavor Name" name="flavorName" required>
+        </md-input-container>
+        <md-input-container class="full-width">
+          <input #imageUrl="ngModel" mdInput ngModel placeholder="Image URL" name="imageUrl" required>
+        </md-input-container>
+
+        <img class="preview" *ngIf="!!imageUrl.value" [src]="imageUrl.value">
+
+        <div class="form-actions">
+          <a [routerLink]="['/']" md-button>Back</a>
+          <button md-raised-button (click)="addFlavor()" color="accent" [disabled]="!flavorForm.form.valid">
+          Save
+        </button>
+        </div>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>
