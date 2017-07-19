@@ -10,6 +10,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AppComponent } from './app.component';
 import { IceCreamTableComponent } from './ice-cream-table/ice-cream-table.component';
 import { FlavorService } from './flavor.service';
+import { NewFlavorComponent } from './new-flavor/new-flavor.component';
 
 @NgModule({
   exports: [
@@ -26,7 +27,8 @@ export class IceCreamMaterialModule { }
 @NgModule({
   declarations: [
     AppComponent,
-    IceCreamTableComponent
+    IceCreamTableComponent,
+    NewFlavorComponent
   ],
   imports: [
     BrowserModule,
